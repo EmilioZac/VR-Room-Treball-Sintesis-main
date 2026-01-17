@@ -40,6 +40,7 @@ public class LevelManager : MonoBehaviour
 
     void SetLevelSpeed(float newSpeed)
     {
+        currentSpeed = newSpeed;
         MoveForward[] movers = FindObjectsOfType<MoveForward>();
         foreach (MoveForward m in movers)
             m.speed = newSpeed;
