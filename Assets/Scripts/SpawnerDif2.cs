@@ -40,7 +40,12 @@ public class SpawnerDif2 : MonoBehaviour
             else
                 selected = prefab2;
 
-            Instantiate(selected, pos, Quaternion.identity);
+            GameObject go = Instantiate(selected, pos, Quaternion.identity);
+
+            // Buscar MoveForward en el prefab o en sus hijos
+            MoveForward mover = go.GetComponentInChildren<MoveForward>();
+            if (mover != null)
+                mover.speed = LevelManager.currentSpeed;
         }
     }
 
