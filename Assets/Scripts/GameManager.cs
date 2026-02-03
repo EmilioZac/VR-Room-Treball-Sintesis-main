@@ -34,6 +34,32 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+    // Menu y mandos
+    public Behaviour ray;
+
+    
+    public GameObject sabaer1;
+    public GameObject saber2;
+
+    
+    public void InGame()
+    {
+        ray.enabled = false;
+
+        sabaer1.SetActive(true);
+        saber2.SetActive(true);
+    }
+
+    
+    public void InMenu()
+    {
+        ray.enabled = true;
+
+        sabaer1.SetActive(false);
+        saber2.SetActive(false);
+    }
+
+
 
     void Update()
     {
