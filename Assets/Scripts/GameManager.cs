@@ -33,10 +33,15 @@ public class GameManager : MonoBehaviour
                 Debug.Log("GameManager: XRUIInputModule añadido para corregir interacción VR.");
             }
         }
+        leftRay = leftHandController.GetComponentInChildren<Behaviour>();
+        rightRay = rightHandController.GetComponentInChildren<Behaviour>();
     }
     // Menu y mandos
-    public Behaviour ray;
+    public GameObject leftHandController;
+    public GameObject rightHandController;
 
+    Behaviour leftRay;
+    Behaviour rightRay;
     
     public GameObject sabaer1;
     public GameObject saber2;
@@ -44,7 +49,8 @@ public class GameManager : MonoBehaviour
     
     public void InGame()
     {
-        ray.enabled = false;
+        rightRay.enabled = false;
+        leftRay.enabled = false;
 
         sabaer1.SetActive(true);
         saber2.SetActive(true);
@@ -53,7 +59,8 @@ public class GameManager : MonoBehaviour
     
     public void InMenu()
     {
-        ray.enabled = true;
+        rightRay.enabled = true;
+        leftRay.enabled = true;
 
         sabaer1.SetActive(false);
         saber2.SetActive(false);
