@@ -1,4 +1,5 @@
 using UnityEngine;
+
 using TMPro;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.UI;
@@ -33,15 +34,15 @@ public class GameManager : MonoBehaviour
                 Debug.Log("GameManager: XRUIInputModule añadido para corregir interacción VR.");
             }
         }
-        leftRay = leftHandController.GetComponentInChildren<Behaviour>();
-        rightRay = rightHandController.GetComponentInChildren<Behaviour>();
+        leftRay = leftHandController.GetComponentInChildren<UnityEngine.XR.Interaction.Toolkit.Interactors.Visuals.XRInteractorLineVisual>();
+        rightRay = rightHandController.GetComponentInChildren<UnityEngine.XR.Interaction.Toolkit.Interactors.Visuals.XRInteractorLineVisual>();
     }
     // Menu y mandos
     public GameObject leftHandController;
     public GameObject rightHandController;
 
-    Behaviour leftRay;
-    Behaviour rightRay;
+    UnityEngine.XR.Interaction.Toolkit.Interactors.Visuals.XRInteractorLineVisual leftRay;
+    UnityEngine.XR.Interaction.Toolkit.Interactors.Visuals.XRInteractorLineVisual rightRay;
     
     public GameObject sabaer1;
     public GameObject saber2;
